@@ -11,15 +11,15 @@ require("./styles.css")
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyBI3zUaFz8l7Y68aAgVNb8UEHUt3RSAjng",
-  authDomain: "library-cfd08.firebaseapp.com",
-  projectId: "library-cfd08",
-  storageBucket: "library-cfd08.appspot.com",
-  messagingSenderId: "837470737044",
-  appId: "1:837470737044:web:a18f941b234776bda19a81",
-  measurementId: "G-4Z3YHPNSGX"
-};
+//const firebaseConfig = {
+//  apiKey: "AIzaSyBI3zUaFz8l7Y68aAgVNb8UEHUt3RSAjng",
+//  authDomain: "library-cfd08.firebaseapp.com",
+//  projectId: "library-cfd08",
+//  storageBucket: "library-cfd08.appspot.com",
+//  messagingSenderId: "837470737044",
+//  appId: "1:837470737044:web:a18f941b234776bda19a81",
+//  measurementId: "G-4Z3YHPNSGX"
+//};
 
 // Initialize Firebase
 //const app = initializeApp(firebaseConfig);

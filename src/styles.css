@@ -1,0 +1,430 @@
+/*
+ * #FFE3D0
+ * #ECC8AF
+ * #E7AD99
+ * #CE796B
+ * #C18C5D
+ * #495867
+ * #000000
+ *
+ * */
+body {
+    padding: 0;
+    margin: 0;
+    font-family: Tahoma, Verdana, sans-serif;
+    background-color: #E7AD99;
+    display: grid;
+    grid-template-columns:  auto 1fr;
+    gap: 15px;
+    height: 100vh;
+    /*min-height: 500px;*/
+}
+
+
+.side_conteiner {
+
+   background-color: #ECC8AF;
+   max-width: 230px;
+   height: 100%;
+   margin: 0;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   align-items: center;
+   padding: 0px 20px;
+    
+}
+
+.top_side {
+    height: 100%;
+    max-height: 600px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+
+/*Logo --------------------------------*/
+.logo {
+    margin-top: 25px;
+    position: relative;
+    width: 220px;
+    height: 230px
+
+}
+
+
+.logo p {
+    margin: 0;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 60px;
+    position: absolute;
+    left: 27px;
+
+
+}
+
+.library::before {
+    content: 'Lib';
+    color: white;
+}
+
+.library {
+    top: 75px;
+}
+
+.my {
+    color: white;
+}
+
+.square {
+    position: absolute;
+    width: 110px;
+    height: 230px;
+    background-color: #CE796B
+}
+/*-------------------------------------*/
+
+h2 {
+    font-size: 44px;
+    font-weight: normal;
+    margin-top: 15px;
+    margin-bottom: 0px;
+
+}
+
+.text p{
+    margin-top: 5px;
+    line-height: 1.5;
+}
+
+.main {
+    height: 100%;
+    width: 100%;
+    background-color: #FFE3D0;
+    margin: 0;
+}
+
+/*Fotter-------------------------------*/
+
+.fotter {
+    cursor: default;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    padding: 5px;
+}
+
+.fotter svg {
+    width: 35px;
+    height: auto;
+    margin-right: 5px;
+    transition: transform 500ms;
+
+}
+
+.fotter p {
+    font-size: 18px;
+    margin: 0;
+}
+
+.fotter:hover svg{
+    transform: rotate(720deg) scale(1.15);
+
+}
+
+.fotter:hover {
+    background-color: #FFE3D0;
+    outline: 1px solid black;
+}
+
+
+/*-------------------------------------*/
+
+
+.main {
+    display: flex;
+    flex-direction: column;
+    overflow-y: hidden;
+}
+
+.main_header {
+    padding: 15px 30px;
+    flex: 0 0 auto;
+    display: flex;
+
+}
+
+.title {
+    flex: 1;
+    display: inline;
+}
+
+/*Read & Reading-----------------------*/
+.read, .reading {
+    position: relative;
+    background-color: #E7AD99;
+    border: 3px solid black;
+    width: 110px;
+    height: 30px;
+    margin-right: 20px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.read:hover , 
+.reading:hover {
+    cursor: default;
+}
+
+
+.read:hover .isquare, 
+.reading:hover .isquare{
+    width: 100%
+}
+
+
+
+.read p, .reading p {
+    position: absolute;
+    left: 28px;
+    font-size: 22px;
+    transition: color 0.2s;
+
+}
+
+.reading p {
+    left: 20px;
+}
+
+.read:hover p {
+    color: white;
+}
+
+.isquare {
+    position: absolute;
+    border-right: 3px solid black;
+    background-color: white;
+    width: 15px;
+    height: 100%;
+    transition: width 0.2s;
+}
+
+.read .isquare {
+    background-color: black
+}
+
+
+
+
+/*-------------------------------------*/
+
+.title h2 {
+    margin-bottom: 15px;
+    font-size: 52px;
+}
+
+
+.enter svg {
+    position: relative;
+    z-index: 1;
+    width: 45px;
+    height: auto;
+
+}
+
+.enter {
+    position: relative;
+    height: min-content;
+    padding: 5px;
+    transition: background-color 200ms;
+    
+}
+
+.enter .c {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    top: 47%;
+    left: 53%;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    background-color: white; 
+    transition: transform 200ms;
+    border-radius: 50%;
+}
+
+.enter:hover .c {
+    opacity: 1;    
+    transform: scale(50, 50)
+    
+}
+
+
+
+.main_body {
+    padding: 35px;
+    max-height: 100vh;
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: flex-start; 
+    align-content: flex-start;
+}
+
+/*Book-Card-----------------------------*/
+.book_card{
+    position: relative;
+    width: 190px;
+    height: 260px;
+}
+
+.book_main, .book_shadow {
+    border: 3px solid black;
+    position: absolute;
+    width: 180px;
+    height: 250px;
+}
+
+.book_main {
+    background-color: #E7AD99;
+    left: 0px;
+    top: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: background-color 100ms;
+}
+
+.book_shadow {
+    background-color: #CE796B;
+    left: 6px;
+    top: 6px;
+    transition: background-color 100ms;
+}
+
+.book_marker {
+    content: '';
+    border: 3px solid black;
+    background-color: black;
+    position: absolute;
+    width: 25px;
+    height: 48px;
+    top: 225px;
+    left: 30px;
+}
+
+.book_card p {
+    line-height: 1.5;
+    font-weight: 500;
+    font-size: 18px;
+    margin: 15px 15px;
+
+}
+
+.book_title {
+    align-self: flex-start;
+    text-align: left;
+}
+
+.book_author {
+    align-self: flex-end;
+    text-align: right;
+}
+
+.book_card:hover .book_main {
+    background-color: #FFE3D0;
+} 
+
+.book_card:hover .book_shadow {
+    background-color: black;
+}
+
+
+
+/*--------------------------------------*/
+
+
+/*ADD CARD------------------------------*/
+
+.add_card {
+    position: relative;
+    width: 190px;
+    height: 260px;
+    background-color: #FFEEE3;
+    transition: outline 50ms;
+}
+
+.add_card * {
+    transition: background-color 100ms;
+}
+
+.add_btn, .shadow_btn {
+    width: 47px;
+    height: 47px;
+    border-radius: 50%;
+    border: 2px solid black;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%)
+ }
+
+
+.add_btn {
+   background-color: #E7AD99;
+}
+
+.shadow_btn {
+    background-color: #CE796B;
+    top: 51.3%;
+    left: 51.3%;
+}
+
+.add_btn > *{
+    position: absolute;
+    background-color:black;
+    width: 7px;
+    height: 30px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%)
+}
+
+.add_btn > *:last-child {
+    width: 30px;
+    height: 7px;
+}
+
+.add_card:hover .add_btn {
+    background-color: #FFEEE3;
+}
+
+.add_card:hover .shadow_btn {
+    background-color: black;
+}
+
+.add_card:hover {
+    outline: 3px solid black;
+}
+
+/*--------------------------------------*/
+
+
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #FFEEE3;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #ECC8AF
+}

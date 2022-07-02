@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <meta charset="utf-8">
+        <title>Library App</title>
+
+        <!-- FIREBASE -->
+        <script src="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.js"></script>
+        <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.css" />
+
+        <!-- Live Reload -->
+        <script>
+            document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] +
+                ':35729/livereload.js?snipver=1"></' + 'script>')
+        </script>
+
+        <!-- CSS & JS -->
+        <link rel="stylesheet" type='text/css' href="/styles.css">
+        <script src="./index.js"></script>
+    </head>
+
+    <body>
+        <div class="side_conteiner">
+
+            <div class="top_side">
+                <div class="logo">
+                    <div class="square"></div>
+                    <p class="my">My</p>
+                    <p class="library">rary</p>
+                </div>
+
+                <div class="text">
+                    <h2>Welcome!</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nibh nunc, augue amet ipsum vitae fermentum tortor faucibus. Commodo faucibus risus ornare augue ultrices. Aliquet at ligula ullamcorper eleifend. Consequat fermentum, felis est, tempor libero.</p>
+                </div>
+            </div>
+
+            <div class="fotter">
+                <svg viewBox="0 0 49 49" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18.6751 46.1781C18.6751 45.4015 18.646 42.8454 18.646 39.6761C18.646 37.4603 19.3779 36.0144 20.206 35.2781C14.991 34.6737 9.50516 32.637 9.50516 23.5253C9.50516 20.9312 10.4228 18.8094 11.9224 17.1486C11.6829 16.5465 10.8727 14.1293 12.1552 10.857C12.1552 10.857 14.127 10.2169 18.6169 13.2922C20.4903 12.7662 22.5002 12.4999 24.5011 12.4954C26.4976 12.4999 28.5075 12.7662 30.3853 13.2922C34.8707 10.2169 36.8426 10.857 36.8426 10.857C38.125 14.1293 37.3193 16.5465 37.0753 17.1486C38.5794 18.8094 39.4881 20.9289 39.4881 23.5253C39.4881 32.6571 33.9956 34.6693 28.7559 35.2557C29.6042 35.9943 30.354 37.4424 30.354 39.6627C30.354 42.8387 30.3249 45.3992 30.3249 46.1781C30.3249 46.816 30.7479 47.5524 31.9409 47.3241C41.2742 44.1772 48 35.2691 48 24.7719C48 11.6426 37.476 1 24.4966 1C11.5218 1 1 11.6404 1 24.7719C1 35.2736 7.73251 44.1839 17.0792 47.3263C18.2476 47.5456 18.6751 46.8115 18.6751 46.1781H18.6751Z" fill="#CE796B"/>
+                    <path d="M18.6751 46.1781C18.6751 45.4015 18.646 42.8454 18.646 39.6761C18.646 37.4603 19.3779 36.0144 20.206 35.2781C14.991 34.6737 9.50516 32.637 9.50516 23.5253C9.50516 20.9312 10.4228 18.8094 11.9224 17.1486C11.6829 16.5465 10.8727 14.1293 12.1552 10.857C12.1552 10.857 14.127 10.2169 18.6169 13.2922C20.4903 12.7662 22.5002 12.4999 24.5011 12.4954C26.4976 12.4999 28.5075 12.7662 30.3853 13.2922C34.8707 10.2169 36.8426 10.857 36.8426 10.857C38.1251 14.1293 37.3193 16.5465 37.0753 17.1486C38.5794 18.8094 39.4881 20.9289 39.4881 23.5253C39.4881 32.6571 33.9956 34.6693 28.7559 35.2557C29.6042 35.9943 30.354 37.4424 30.354 39.6627C30.354 42.8387 30.3249 45.3992 30.3249 46.1781C30.3249 46.816 30.7479 47.5524 31.9409 47.3241C41.2742 44.1772 48 35.2691 48 24.7719C48 11.6426 37.476 1 24.4966 1C11.5218 1 1 11.6404 1 24.7719C1 35.2736 7.73251 44.1839 17.0792 47.3263C18.2476 47.5456 18.6751 46.8115 18.6751 46.1781H18.6751Z" stroke="black" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M7.99435 34.855C10.1453 35.5086 10.9935 36.2248 12.0052 37.9214C13.0146 39.6179 14.1987 41.5115 18.6482 40.4326" stroke="black" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <p>GiovannyOG</p>
+            </div>
+        </div>
+
+        <div class="main">
+            <div class="main_header">
+                <div class="title">
+
+                    <h2>Books</h2>
+                    <div class="read">
+                        <div class="isquare"></div>
+                        <p>Read</p>
+                    </div>
+
+                    <div class="reading">
+                        <div class="isquare"></div>
+                        <p>Reading</p>
+                    </div>
+                </div>
+
+                <div id='firebaseui-auth-container' class="enter">
+                    <div class="c"></div   >
+                    <svg viewBox="0 0 67 67" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M58.3715 58.3715V8.33878H33.3551V0H66.7102V66.7102H33.3551V58.3715H58.3715ZM29.1941 54.2104L50.0327 33.3551L29.1857 12.5082L23.2819 18.412L34.0723 29.1857H0V37.5245H34.0723L23.2902 48.3066L29.1941 54.2104Z" fill="black"/>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="main_body">
+
+                <div class="book_card">
+                    <div class="book_shadow"></div>
+                    <div class="book_marker"></div>
+                    <div class="book_main">
+                        <p class="book_title">Fundamentos da 
+                            Matematica Elementar: Volume 1</p>
+                        <p class="book_author">Gelson Iezzi</p>
+                    </div>
+                </div>
+
+                <div class="add_card">
+
+                    <div class="shadow_btn"></div>
+
+                    <div class="add_btn">
+                        <div></div>
+                        <div></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>

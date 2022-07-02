@@ -1,7 +1,4 @@
-const path = require("path");
-var HtmlWebpackPlugin = require("html-webpack-plugin");
-
-module.exports = {
+export default {
   entry: {
     main: "./src/index.js",
   },

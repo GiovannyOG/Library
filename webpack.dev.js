@@ -1,13 +1,16 @@
-const path = require("path");
-const common = require("./webpack.common.js");
-const {merge} = require("webpack-merge");
-var HtmlWebpackPlugin = require("html-webpack-plugin");
+import {dirname, resolve} from "path";
+import {fileURLToPath} from 'url';
+import common from "./webpack.common.js";
+import {merge} from "webpack-merge";
+import HtmlWebpackPlugin from "html-webpack-plugin";
 
-module.exports = merge(common, {
+const __dirname = dirname(fileURLToPath(import.meta.url));
+
+export default merge(common, {
   mode: "development",
   output: {
     filename: "main.js",
-    path: path.resolve(__dirname, "dist")
+    path: resolve(__dirname, "dist")
   },
   plugins: [
     new HtmlWebpackPlugin({

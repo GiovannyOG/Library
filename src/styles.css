@@ -447,3 +447,8 @@ h2 {
     top: 50%;
     
 }
+
+#logout_buttom {
+    display: none
+}
+

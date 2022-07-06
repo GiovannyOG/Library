@@ -230,6 +230,24 @@ h2 {
     font-size: 52px;
 }
 
+.username {
+    display:none;
+    margin-right: 2em;
+    height: min-content;
+    align-self: center;
+    cursor: default;
+}
+
+.username p {
+    display: block;
+    font-size: 1.5em;
+    margin: 0;
+}
+
+.username p:last-child {
+    font-size: 2.5em;
+    font-weight: normal;
+}
 
 .enter svg {
     position: relative;
@@ -243,6 +261,7 @@ h2 {
     position: relative;
     height: min-content;
     padding: 5px;
+    align-self: start;
     transition: background-color 200ms;
     
 }

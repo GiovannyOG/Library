@@ -1,12 +1,13 @@
 import 'firebase/compat/auth';
-import { getAuth, 
+import {
   onAuthStateChanged, 
   GoogleAuthProvider, 
   signInWithPopup,
   signOut
         } from 'firebase/auth'
+import { auth } from './firebase.app.js'
+import { watch_userBooks } from './firebase.data-base.js'
 
-const auth = getAuth();
 const provider = new GoogleAuthProvider();
 
 // Elements
@@ -70,6 +71,7 @@ const logIn = () => {
 // Change the UI when the login state change
 onAuthStateChanged(auth, (user) => {
   updateUi(user)
+  watch_userBooks()
 });
 
 // Buttoms fucntions

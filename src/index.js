@@ -6,9 +6,8 @@ import "./styles.css";
 /*--------------------*/
 /*-----FIREBASE-------*/
 /*--------------------*/
-import app from "./app/firebase.app.js"
 import "./app/firebase.auth.js"
-
+import "./app/firebase.data-base.js"
 
 
 

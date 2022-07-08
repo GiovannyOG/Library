@@ -58,7 +58,8 @@ function get_book (book_title) {
 }
 
 
-// initialize a empty whatcher let watcher = null
+// initialize a empty whatcher 
+let watcher = null
 export function watch_userBooks () {
   // if our whatcher is already watching
   if (watcher) {

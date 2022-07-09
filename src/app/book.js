@@ -28,4 +28,23 @@ export default class Book {
   set setRead(read) {
     this.read = read
   }
+
+  // CONVERTER
+  static bookConverter = {
+    toFirestore: (book) => {
+      return {
+        title: book.title,
+        author: book.author,
+        read: book.read
+      }
+    },
+    fromFirestore: (snap, opt) => {
+      const data = snap.data(opt)
+      return new Book(
+        data.title, 
+        data.author, 
+        data.read
+      )
+    }
+  }
 }

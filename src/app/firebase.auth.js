@@ -6,7 +6,7 @@ import {
   signOut
         } from 'firebase/auth'
 import { auth } from './firebase.app.js'
-import { watch_userBooks } from './firebase.data-base.js'
+import { test, watch_userBooks } from './firebase.data-base.js'
 
 const provider = new GoogleAuthProvider();
 
@@ -72,6 +72,8 @@ const logIn = () => {
 onAuthStateChanged(auth, (user) => {
   updateUi(user)
   watch_userBooks()
+  //--test population--
+  //test()
 });
 
 // Buttoms fucntions

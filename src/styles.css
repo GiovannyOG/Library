@@ -9,10 +9,12 @@
  *
  * */
 
+@import url('https://fonts.googleapis.com/css2?family=Inter');
+
 body {
     padding: 0;
     margin: 0;
-    font-family: Tahoma, Verdana, sans-serif;
+    font-family: 'Inter', Verdana, sans-serif;
     background-color: #E7AD99;
     display: grid;
     grid-template-columns:  auto 1fr;
@@ -282,10 +284,7 @@ h2 {
 .enter:hover .c {
     opacity: 1;    
     transform: scale(50, 50)
-    
 }
-
-
 
 .main_body {
     padding: 35px;
@@ -332,12 +331,19 @@ h2 {
 .book_marker {
     content: '';
     border: 3px solid black;
-    background-color: black;
     position: absolute;
     width: 25px;
     height: 48px;
     top: 225px;
     left: 30px;
+}
+
+.bm-read {
+  background-color: black;
+}
+
+.bm-reading {
+  background-color: white;
 }
 
 .book_card p {
@@ -454,18 +460,171 @@ h2 {
 
 .overlay {
     position: fixed;
-    display:none;
+    display: none;
     background-color: rgba(0, 0, 0, 0.5);
     height: 100%;
     width: 100%
 }
 
-.popup {
-    position: fixed;
-    left: 50%;
-    top: 50%;
-    
+.popup-edit, .popup-delete {
+  position: relative;
+  display: none;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  padding: 20px;
+  width: 420px;
+  background-color: #ECC8AF;
+  border: 2px solid black;
+  transform: translate(-50%, -50%)
 }
+
+.popup-delete {
+  width: 340px;
+}
+
+.popup-title {
+  display: flex;
+  justify-content: flex-start;
+  gap: 15px;
+}
+
+.d-buttom {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+}
+
+input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px;
+  background-color: #E7AD99;
+  border: 1px solid black;
+  transition: background-color 100ms;
+  transition: box-shadow 100ms ease-in-out
+
+}
+
+input:focus {
+  outline: none;
+  background-color: transparent;
+  box-shadow: 3px 3px 0px black;
+
+}
+
+.overlay h2 {
+  margin: 0;
+  font-size: 64px
+}
+
+.popup-delete h2 {
+  font-size: 36px;
+}
+
+.overlay p {
+  margin: 0;
+  margin-top: 20px;
+  margin-bottom: 5px;
+  font-weight: 500;
+  font-size: 16px
+}
+
+.overlay button {
+  border: 0;
+  width: 100px;
+  height: 35px;
+  background-color: #495867;
+  color: white; 
+  font-size: 16px;
+  transition: background-color 100ms;
+  transition: box-shadow 100ms ease-in-out;
+}
+
+.overlay button:hover {
+  background-color: #CE796B;
+}
+
+.overlay button:hover {
+  box-shadow: 3px 3px 0px black;
+  background-color: #ECC8AF;
+  border: 1px solid black;
+  color: black;
+}
+
+.overlay .bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.overlay .bottom svg:hover > * {
+    fill: white;
+}
+
+.lcb {
+  width: max-content;
+  display: block;
+  margin-top: 10px;
+  padding-left: 20px;
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#read {
+  margin-top:15px
+}
+
+.lcb input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.cb {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  height: 10px;
+  width: 10px;
+  background-color: #ECC8AF;
+  border: 1px solid black;
+}
+
+.lcb input:checked ~ .cb {
+  background-color: black;
+}
+
+.lcb:hover .cb {
+  background-color: white;
+}
+
+ .close {
+   position: absolute;
+   top: 20px;
+   right: 20px;
+   cursor: pointer;
+ }
+ 
+.overlay .bottom svg > *,
+.close > * {
+  transition: fill 100ms
+}
+
+  
+ .close:hover > *{
+   fill: white;
+ }
+/*-------------------------------------*/
+
 
 #logout_buttom {
     display: none

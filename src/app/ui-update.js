@@ -1,4 +1,5 @@
 import Book from "./book.js"
+import { save_book, del_book } from "./firebase.data-base.js"
 
 // Elements
 export const login_buttom = document.getElementById('login_buttom')
@@ -79,6 +80,7 @@ function qsnap_to_elements(book_qSnap) {
   const children_array = []
   book_qSnap.forEach( book_doc => {
     const book = book_doc.data()
+    book.doc = book_doc.ref.withConverter(Book.bookConverter)
     children_array.push(
       create_bookCard(book)
     )
@@ -117,7 +119,7 @@ export function updateUi_onDataChange(book_qSnap) {
   update_mainBodyContent(cardElements_array)
 }
 
-const onClick_bookCard = book => {
+const onClick_bookCard = (book) => {
   show_editPopup()  
   updateEditPopup(book)
 }
@@ -134,6 +136,7 @@ const onClick_addCard = () => {
 
 // Elements
 const overlay = document.querySelector(".overlay")
+const d_overlay = document.querySelector(".overlay .overlay")
 const delete_popup = document.querySelector(".popup-delete")
 const edit_popup = document.querySelector(".popup-edit")
 
@@ -146,13 +149,16 @@ function show_editPopup() {
 function hide_editPopup() {
   hide_element(overlay)
   hide_element(edit_popup)
+  current_book = null
 }
 
 function show_deletePopup() {
+  show_element(d_overlay)
   show_element(delete_popup)
 }
 
 function hide_deletePopup() {
+  hide_element(d_overlay)
   hide_element(delete_popup)
 }
 
@@ -163,9 +169,24 @@ d_close_buttom.addEventListener("click", hide_deletePopup)
 
 const e_title_input = document.querySelector(".popup-edit .title")
 const e_author_input = document.querySelector(".popup-edit .author")
-const e_delete_btn = document.querySelector(".popup-edit .bottom svg")
-export const e_save_btn = document.querySelector(".popup-edit btn")
-export const d_delete_btn = document.querySelector(".popup-delete btn")
+const e_delete_btn = document.querySelector(".popup-edit .bottom .del_btn")
+e_delete_btn.addEventListener("click", show_deletePopup)
+
+let current_book = null
+export const e_save_btn = document.querySelector(".popup-edit .btn")
+e_save_btn.addEventListener('click', (e) => {
+  const newBook = recoverEditPopupData() 
+  save_book(newBook, (current_book) ? current_book.doc : null)
+  hide_editPopup()
+})
+
+export const d_delete_btn = document.querySelector(".popup-delete .btn")
+d_delete_btn.addEventListener('click', (e) => {
+  del_book(current_book.doc)
+  hide_deletePopup()
+  hide_editPopup()
+
+})
 
 //Check Boxes Elements
 const e_checkboxes_labels = document.querySelectorAll(".lcb")
@@ -191,20 +212,22 @@ function select(cb) {
 }
 
 function updateEditPopup(book) {
+  current_book = book
   if (!book){
     e_title_input.value = DEFAULT_TITLE
     e_author_input.value= DEFAULT_AUTHOR
     select((DEFAULT_READ == true) ? e_read : e_reading)
-
+    hide_element(e_delete_btn)
   } else {
-  e_title_input.value = book.title
-  e_author_input.value = book.author
-  select((book.read == true) ? e_read : e_reading)
+    e_title_input.value = book.title
+    e_author_input.value = book.author
+    select((book.read == true) ? e_read : e_reading)
+    show_element(e_delete_btn)
   }
 }
 
 export function recoverEditPopupData() {
-  return book = new Book(
+  return new Book(
     e_title_input.value, 
     e_author_input.value, 
     e_read.checked

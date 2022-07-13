@@ -112,6 +112,11 @@ h2 {
 
 /*Fotter-------------------------------*/
 
+a {
+  text-decoration: none;
+  color: black;
+}
+
 .fotter {
     cursor: default;
     display: flex;
@@ -121,6 +126,7 @@ h2 {
     margin-bottom: 5px;
     margin-top: 5px;
     padding: 5px;
+    cursor: pointer;
 }
 
 .fotter svg {
@@ -265,6 +271,7 @@ h2 {
     padding: 5px;
     align-self: start;
     transition: background-color 200ms;
+    cursor: pointer;
     
 }
 
@@ -302,6 +309,7 @@ h2 {
     position: relative;
     width: 190px;
     height: 260px;
+    cursor: pointer
 }
 
 .book_main, .book_shadow {
@@ -385,6 +393,7 @@ h2 {
     height: 260px;
     background-color: #FFEEE3;
     transition: outline 50ms;
+    cursor: pointer;
 }
 
 .add_card * {
@@ -559,6 +568,10 @@ input:focus {
   margin-top: 20px;
 }
 
+.overlay .bottom svg {
+  cursor: pointer;
+}
+
 .overlay .bottom svg:hover > * {
     fill: white;
 }
@@ -625,6 +638,9 @@ input:focus {
  }
 /*-------------------------------------*/
 
+button {
+  cursor: pointer;
+}
 
 #logout_buttom {
     display: none

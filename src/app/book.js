@@ -5,27 +5,27 @@ export default class Book {
     this.read = read
   }
 
-  get getTitle() {
+  get Title() {
     return this.title
   }
 
-  get getAuthor() {
+  get Author() {
     return this.author
   }
 
-  get isRead() {
+  get Read() {
     return this.read
   }
 
-  set setTitle(title) {
+  set Title(title) {
     this.title = title
   }
 
-  set setAuthor(author) {
+  set Author(author) {
     this.author = author
   }
 
-  set setRead(read) {
+  set Read(read) {
     this.read = read
   }
 

@@ -31,7 +31,7 @@ jobs:
           npm run build
 
       - name: Deploy to GH Page
-        uses: GiovannyOG/Library@main
+        uses: GiovannyOG/Library@1
         with:
           branch: gh-pages
           folder: dist

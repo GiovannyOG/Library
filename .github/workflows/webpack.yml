@@ -21,10 +21,13 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
+    
+    - name: Install
+      run: npm install --force
 
     - name: Build
       run: |
-        npm install --force
+        npm autoclean
         npm run build
         
     - name: Deploy to GH Page

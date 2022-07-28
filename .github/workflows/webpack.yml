@@ -34,7 +34,7 @@ jobs:
           npm run build
 
       - name: Deploy to GH Page
-        uses: GiovannyOG/Library@main
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
           folder: dist

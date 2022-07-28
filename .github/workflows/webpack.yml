@@ -30,7 +30,7 @@ jobs:
 
       - name: Build
         run: |
-          npm autoclean
+          npm prune
           npm run build
 
       - name: Deploy to GH Page

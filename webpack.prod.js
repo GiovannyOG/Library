@@ -1,23 +1,26 @@
-const path = require("path");
-const common = require("./webpack.common");
-const {merge} = require("webpack-merge");
-const {CleanWebpackPlugin} = require("clean-webpack-plugin");
+import {dirname, resolve} from "path";
+import common from "./webpack.common.js";
+import {merge} from "webpack-merge";
+import {CleanWebpackPlugin} from "clean-webpack-plugin";
 // Delete files in case of double bundle
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
 // Estract css from js
-const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+import OptimizeCssAssetsPlugin from "optimize-css-assets-webpack-plugin";
 // Minimaize css files
-const TerserPlugin = require("terser-webpack-plugin");
+import TerserPlugin from "terser-webpack-plugin";
 // Minimaize js files
-var HtmlWebpackPlugin = require("html-webpack-plugin");
+import HtmlWebpackPlugin from "html-webpack-plugin";
+import { fileURLToPath } from "url";
 // HTML bundler
 
-module.exports = merge(common, {
+const __dirname = dirname(fileURLToPath(import.meta.url))
+
+export default merge(common, {
   mode: "production",
 
   output: {
     filename: "main.[contentHash].bundle.js",
-    path: path.resolve(__dirname, "dist")
+    path: resolve(__dirname, "dist")
   },
   optimization: {
     minimizer: [

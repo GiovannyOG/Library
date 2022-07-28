@@ -30,7 +30,7 @@ jobs:
 
       - name: Build
         run: |
-          npm prune
+          npm prune --force
           npm run build
 
       - name: Deploy to GH Page
